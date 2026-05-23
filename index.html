@@ -1,1 +1,68 @@
-# index.html
+<!DOCTYPE html>
+<html>
+    <body style="text-align:center; margin-top:100px;">
+        <h1>Weather Station Dashboard</h1>
+
+        <input type="text" id="weatherStation" placeholder="Enter sunny, rainy, snowy, or windy">
+      
+        <p id="message"></p>
+        
+        <div style="text-align:center";>
+
+        <img id="sunny" src="sunny.jpg" height="150px" width="150px" style="display:none;">
+        <img id="rainy" src="rainy.jpg" height="150px" width="150px" style="display:none;">
+        <img id="snowy" src="snowy.jpg" height="150px" width="150px" style="display:none;">
+        <img id="windy" src="windy.jpg" height="150px" width="150px" style="display:none;">
+        
+      </div>
+
+         <button onclick="checkWeather()">Check Weather</button>
+                  
+         <script>
+            function checkWeather(){
+               let weather= document.getElementById("weatherStation").value;
+               
+               if (weather=="sunny") {
+                document.body.style.backgroundColor="gold";
+                document.getElementById("message").innerText="Put on your shades!";
+                document.getElementById("sunny").style.display="block";
+                document.getElementById("rainy").style.display="none";
+                document.getElementById("snowy").style.display="none";
+                document.getElementById("windy").style.display="none";
+
+
+               }
+                else if (weather=="rainy") {
+                document.body.style.backgroundColor="blue";
+                document.getElementById("message").innerText="don't forget your umbrella!";
+                document.getElementById("sunny").style.display="none";
+                document.getElementById("rainy").style.display="block";
+                document.getElementById("snowy").style.display="none";
+                document.getElementById("windy").style.display="none";
+
+
+            }
+             else if (weather=="snowy") {
+                document.body.style.backgroundColor="white";
+                document.getElementById("message").innerText="It's freezing! Wear a coat.";
+                document.getElementById("sunny").style.display="none";
+                document.getElementById("rainy").style.display="none";
+                document.getElementById("snowy").style.display="block";
+                document.getElementById("windy").style.display="none";
+             }
+
+              else {
+                document.body.style.backgroundColor="gray";
+                document.getElementById("message").innerText="Unknown weather condition!";
+                document.getElementById("sunny").style.display="none";
+                document.getElementById("rainy").style.display="none";
+                document.getElementById("snowy").style.display="none";
+                document.getElementById("windy").style.display="none";
+              }
+            }
+
+
+         </script>
+
+        </body>
+</html>
